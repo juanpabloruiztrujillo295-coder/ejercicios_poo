@@ -1,3 +1,4 @@
+#Juan Pablo Ruiz Trujillo y Cristopher Arboleda
 from abc import ABC, abstractmethod
 from typing import List
 
