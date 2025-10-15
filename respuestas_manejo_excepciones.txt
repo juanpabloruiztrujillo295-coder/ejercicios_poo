@@ -1,0 +1,54 @@
+MANEJO DE EXCEPCIONES - RESPUESTAS EXPLICADAS EN PRIMERA PERSONA
+
+PROBLEMA 1: Except desnudo
+1. Si uso un except sin decir qué tipo de error estoy esperando, nunca sabré qué fue lo que falló. 
+   Puede ser una división entre cero, una variable mal escrita o hasta que el usuario cerró el programa, y todo se ve igual.
+2. Si me equivoco en algo del código, ese error se escondería y solo vería un mensaje genérico. 
+   Así no sabría cuál fue el problema real ni dónde pasó.
+3. Esto hace que arreglar el error sea más complicado, porque no tengo pistas sobre lo que salió mal.
+
+PROBLEMA 2: Capturar demasiado ampliamente
+1. En este tipo de casos pueden pasar errores muy diferentes, como que el archivo no exista, 
+   que los datos no sean válidos o que haya una división por cero, pero el código los trata a todos igual.
+2. No todos los errores se deben manejar de la misma forma. 
+   Si el archivo no está, podría mostrar un aviso; pero si los datos son incorrectos, debería mostrar otro mensaje distinto.
+3. Al atraparlos todos con un except general, pierdo información sobre qué tipo de error fue realmente. 
+   Eso me dificulta entender qué hacer para corregirlo.
+
+PROBLEMA 3: Ignorar errores silenciosamente
+1. Si ignoro un error y dejo que el programa siga como si nada, puedo pensar que todo salió bien, 
+   pero en realidad algo pudo fallar sin que me diera cuenta.
+2. Lo mejor es que el programa me avise o guarde el error en algún registro para poder revisarlo después. 
+   Así sé si todo se ejecutó correctamente o no.
+3. Ignorar errores importantes puede causar pérdida de datos o resultados incorrectos sin darme cuenta.
+
+PROBLEMA 4: Confusión con else y finally
+1. El bloque “else” se ejecuta solo si no ocurre ningún error en el “try”, 
+   mientras que “finally” siempre se ejecuta, haya o no error. 
+   Es importante saber cuándo usar cada uno.
+2. Yo pondría en “else” el código que solo debe correr si todo salió bien, 
+   y en “finally” las acciones que deben hacerse siempre, como cerrar un archivo o liberar memoria.
+3. Incluso si el “try” tiene un “return”, el “finally” se ejecutará igual antes de salir. 
+   Por eso es útil para asegurarse de que algo se haga sin importar el resultado.
+
+PROBLEMA 5: Uso incorrecto de raise
+1. No es buena idea lanzar errores genéricos como “Exception”. 
+   Es mejor usar errores específicos como “ValueError” o “TypeError” para que se entienda mejor qué pasó.
+2. El mensaje del error debería explicar claramente qué fue lo que salió mal, 
+   por ejemplo: “No se puede dividir por cero” o “Edad negativa no permitida”.
+3. Si uso tipos de error correctos y mensajes claros, es más fácil entender el problema y manejarlo correctamente en otras partes del programa.
+
+PROBLEMA 6: No re-lanzar apropiadamente
+1. A veces sí tiene sentido manejar el error dentro de la misma función, 
+   sobre todo si puedo solucionarlo sin afectar el resto del programa.
+2. Pero si no puedo arreglarlo ahí mismo, es mejor mostrarlo o guardarlo en un log, 
+   y luego volver a lanzarlo para que otro nivel del programa lo maneje como debe ser.
+3. Si el error no se puede resolver localmente, lo mejor es dejar que suba a un nivel superior, 
+   para que el programa decida qué hacer.
+
+PROBLEMA 7: Excepciones en bucles
+1. Si un error pasa dentro de un bucle, no siempre tiene sentido detener todo. 
+   A veces conviene saltar ese elemento y seguir con los demás.
+2. Lo ideal es anotar cuáles elementos fallaron y cuáles se procesaron bien, 
+   así al final tengo un resumen claro del resultado.
+3. Si todos fallan, el programa debería avisar, para no dar resultados vacíos sin explicación.
