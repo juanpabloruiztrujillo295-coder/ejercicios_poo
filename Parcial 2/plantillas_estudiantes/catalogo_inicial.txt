@@ -1,0 +1,10 @@
+9780306406157|El Principito|A. Saint-Exupéry|1943|Infantil|3
+9780140449136|La Iliada|Homero|1998|Clásicos|2
+9788491050275|Cien Años de Soledad|G. García Márquez|1967|Novela|4
+9788420471839|Don Quijote de la Mancha|Miguel de Cervantes|1605|Clásicos|5
+9789505472413|Rayuela|Julio Cortázar|1963|Novela|3
+9789588886511|La María|Jorge Isaacs|1867|Romance|2
+9788408172173|Orgullo y Prejuicio|Jane Austen|1813|Romance|4
+9788445071738|El Hobbit|J.R.R. Tolkien|1937|Fantasía|6
+9788437604947|La Odisea|Homero|1992|Clásicos|2
+9788445071684|El Señor de los Anillos|J.R.R. Tolkien|1954|Fantasía|7
